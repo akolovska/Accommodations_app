@@ -1,0 +1,380 @@
+2026-06-23T10:42:57.699+02:00  INFO 9724 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Starting EmtLabBApplication using Java 21.0.10 with PID 9724 (C:\Users\Ana\IdeaProjects\emt_lab_B\target\classes started by Ana in C:\Users\Ana\IdeaProjects\emt_lab_B)
+2026-06-23T10:42:57.706+02:00 DEBUG 9724 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-23T10:42:57.706+02:00  INFO 9724 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : The following 1 profile is active: "dev"
+2026-06-23T10:42:59.669+02:00  INFO 9724 --- [emt_lab_B] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-23T10:42:59.669+02:00  INFO 9724 --- [emt_lab_B] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-23T10:42:59.854+02:00  INFO 9724 --- [emt_lab_B] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-23T10:42:59.916+02:00  INFO 9724 --- [emt_lab_B] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-23T10:43:00.372+02:00  INFO 9724 --- [emt_lab_B] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-23T10:43:00.505+02:00  INFO 9724 --- [emt_lab_B] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7e94de5f
+2026-06-23T10:43:00.507+02:00  INFO 9724 --- [emt_lab_B] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-23T10:43:00.570+02:00  INFO 9724 --- [emt_lab_B] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/rentals]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.4
+	Default catalog/schema: rentals/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-23T10:43:01.489+02:00  INFO 9724 --- [emt_lab_B] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-23T10:43:01.855+02:00  WARN 9724 --- [emt_lab_B] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-23T10:43:01.989+02:00 DEBUG 9724 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.web.filter.JwtFilter  : Filter 'jwtFilter' configured for use
+2026-06-23T10:43:02.001+02:00  WARN 9724 --- [emt_lab_B] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtConstants': Injection of autowired dependencies failed
+2026-06-23T10:43:02.004+02:00  INFO 9724 --- [emt_lab_B] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-23T10:43:02.007+02:00  INFO 9724 --- [emt_lab_B] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-23T10:43:02.011+02:00  INFO 9724 --- [emt_lab_B] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-23T10:43:02.031+02:00 ERROR 9724 --- [emt_lab_B] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtConstants': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:499) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1446) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at mk.finki.ukim.emt_lab_b.EmtLabBApplication.main(EmtLabBApplication.java:13) ~[classes/:na]
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'JWT_SECRET_KEY' in value "${JWT_SECRET_KEY}" <-- "${jwt.secret}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:296) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:129) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:96) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:286) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:257) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:184) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:959) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1672) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:827) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 19 common frames omitted
+
+2026-06-23T10:43:43.819+02:00  INFO 13420 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Starting EmtLabBApplication using Java 21.0.10 with PID 13420 (C:\Users\Ana\IdeaProjects\emt_lab_B\target\classes started by Ana in C:\Users\Ana\IdeaProjects\emt_lab_B)
+2026-06-23T10:43:43.822+02:00 DEBUG 13420 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-23T10:43:43.822+02:00  INFO 13420 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : The following 1 profile is active: "dev"
+2026-06-23T10:43:45.083+02:00  INFO 13420 --- [emt_lab_B] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-23T10:43:45.083+02:00  INFO 13420 --- [emt_lab_B] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-23T10:43:45.279+02:00  INFO 13420 --- [emt_lab_B] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-23T10:43:45.340+02:00  INFO 13420 --- [emt_lab_B] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-23T10:43:45.733+02:00  INFO 13420 --- [emt_lab_B] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-23T10:43:45.853+02:00  INFO 13420 --- [emt_lab_B] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@bea5941
+2026-06-23T10:43:45.854+02:00  INFO 13420 --- [emt_lab_B] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-23T10:43:45.909+02:00  INFO 13420 --- [emt_lab_B] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/rentals]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.4
+	Default catalog/schema: rentals/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-23T10:43:46.719+02:00  INFO 13420 --- [emt_lab_B] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-23T10:43:47.035+02:00  WARN 13420 --- [emt_lab_B] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-23T10:43:47.172+02:00 DEBUG 13420 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.web.filter.JwtFilter  : Filter 'jwtFilter' configured for use
+2026-06-23T10:43:47.741+02:00  WARN 13420 --- [emt_lab_B] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1dfc1981-3a82-420a-8f41-b572c6abc5dc
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-23T10:43:48.277+02:00  INFO 13420 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Started EmtLabBApplication in 4.844 seconds (process running for 5.444)
+2026-06-23T10:43:53.657+02:00  INFO 13420 --- [emt_lab_B] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-23T10:43:54.414+02:00  INFO 13420 --- [emt_lab_B] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 492 ms
+2026-06-23T10:44:14.026+02:00 DEBUG 13420 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:44:14.028+02:00 TRACE 13420 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:44:30.869+02:00 DEBUG 13420 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:44:30.870+02:00 TRACE 13420 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:44:50.231+02:00 DEBUG 13420 --- [emt_lab_B] [http-nio-8080-exec-3] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:44:50.232+02:00 TRACE 13420 --- [emt_lab_B] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:50:29.896+02:00  INFO 13420 --- [emt_lab_B] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-23T10:50:29.899+02:00  INFO 13420 --- [emt_lab_B] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-23T10:50:35.498+02:00  INFO 9940 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Starting EmtLabBApplication using Java 21.0.10 with PID 9940 (C:\Users\Ana\IdeaProjects\emt_lab_B\target\classes started by Ana in C:\Users\Ana\IdeaProjects\emt_lab_B)
+2026-06-23T10:50:35.500+02:00 DEBUG 9940 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-23T10:50:35.500+02:00  INFO 9940 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : The following 1 profile is active: "dev"
+2026-06-23T10:50:36.753+02:00  INFO 9940 --- [emt_lab_B] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-23T10:50:36.753+02:00  INFO 9940 --- [emt_lab_B] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-23T10:50:36.912+02:00  INFO 9940 --- [emt_lab_B] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-23T10:50:36.968+02:00  INFO 9940 --- [emt_lab_B] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-23T10:50:37.352+02:00  INFO 9940 --- [emt_lab_B] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-23T10:50:37.459+02:00  INFO 9940 --- [emt_lab_B] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@bea5941
+2026-06-23T10:50:37.461+02:00  INFO 9940 --- [emt_lab_B] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-23T10:50:37.526+02:00  INFO 9940 --- [emt_lab_B] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/rentals]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.4
+	Default catalog/schema: rentals/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-23T10:50:38.354+02:00  INFO 9940 --- [emt_lab_B] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-23T10:50:38.673+02:00  WARN 9940 --- [emt_lab_B] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-23T10:50:38.806+02:00 DEBUG 9940 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.web.filter.JwtFilter  : Filter 'jwtFilter' configured for use
+2026-06-23T10:50:39.339+02:00  WARN 9940 --- [emt_lab_B] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4f3121aa-d3ef-4ba7-aa32-e4f70a484e5c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-23T10:50:39.854+02:00  INFO 9940 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Started EmtLabBApplication in 4.735 seconds (process running for 5.275)
+2026-06-23T10:50:42.964+02:00  INFO 9940 --- [emt_lab_B] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-23T10:50:43.674+02:00  INFO 9940 --- [emt_lab_B] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 484 ms
+2026-06-23T10:51:00.493+02:00  INFO 9940 --- [emt_lab_B] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-23T10:51:00.496+02:00  INFO 9940 --- [emt_lab_B] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-23T10:51:05.270+02:00  INFO 19776 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Starting EmtLabBApplication using Java 21.0.10 with PID 19776 (C:\Users\Ana\IdeaProjects\emt_lab_B\target\classes started by Ana in C:\Users\Ana\IdeaProjects\emt_lab_B)
+2026-06-23T10:51:05.272+02:00 DEBUG 19776 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-23T10:51:05.272+02:00  INFO 19776 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : The following 1 profile is active: "dev"
+2026-06-23T10:51:06.507+02:00  INFO 19776 --- [emt_lab_B] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-23T10:51:06.508+02:00  INFO 19776 --- [emt_lab_B] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-23T10:51:06.668+02:00  INFO 19776 --- [emt_lab_B] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-23T10:51:06.721+02:00  INFO 19776 --- [emt_lab_B] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-23T10:51:07.102+02:00  INFO 19776 --- [emt_lab_B] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-23T10:51:07.220+02:00  INFO 19776 --- [emt_lab_B] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2133b712
+2026-06-23T10:51:07.222+02:00  INFO 19776 --- [emt_lab_B] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-23T10:51:07.276+02:00  INFO 19776 --- [emt_lab_B] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/rentals]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.4
+	Default catalog/schema: rentals/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-23T10:51:08.103+02:00  INFO 19776 --- [emt_lab_B] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-23T10:51:08.404+02:00  WARN 19776 --- [emt_lab_B] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-23T10:51:08.549+02:00 DEBUG 19776 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.web.filter.JwtFilter  : Filter 'jwtFilter' configured for use
+2026-06-23T10:51:09.072+02:00  WARN 19776 --- [emt_lab_B] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6ba9dd01-f753-42a8-8a8a-b7b6d411d44a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-23T10:51:09.624+02:00  INFO 19776 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Started EmtLabBApplication in 4.734 seconds (process running for 5.285)
+2026-06-23T10:51:12.514+02:00  INFO 19776 --- [emt_lab_B] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-23T10:51:13.269+02:00  INFO 19776 --- [emt_lab_B] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 516 ms
+2026-06-23T10:51:31.626+02:00 DEBUG 19776 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:51:31.627+02:00 TRACE 19776 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:51:46.908+02:00 DEBUG 19776 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:51:46.908+02:00 TRACE 19776 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:51:46.935+02:00 DEBUG 19776 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : select r1_0.id,r1_0.category,r1_0.created_at,r1_0.host_id,r1_0.name,r1_0.num_rooms,r1_0.updated_at from rentals r1_0
+2026-06-23T10:51:46.946+02:00 DEBUG 19776 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:51:46.946+02:00 TRACE 19776 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:51:46.951+02:00 DEBUG 19776 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:51:46.952+02:00 TRACE 19776 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [2]
+2026-06-23T10:51:46.954+02:00 DEBUG 19776 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:51:46.954+02:00 TRACE 19776 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [3]
+2026-06-23T10:51:46.956+02:00 DEBUG 19776 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:51:46.956+02:00 TRACE 19776 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [4]
+2026-06-23T10:54:26.940+02:00  INFO 19776 --- [emt_lab_B] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-23T10:54:26.944+02:00  INFO 19776 --- [emt_lab_B] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-23T10:55:21.606+02:00  INFO 9400 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Starting EmtLabBApplication using Java 21.0.10 with PID 9400 (C:\Users\Ana\IdeaProjects\emt_lab_B\target\classes started by Ana in C:\Users\Ana\IdeaProjects\emt_lab_B)
+2026-06-23T10:55:21.608+02:00 DEBUG 9400 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-23T10:55:21.608+02:00  INFO 9400 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : The following 1 profile is active: "dev"
+2026-06-23T10:55:22.834+02:00  INFO 9400 --- [emt_lab_B] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-23T10:55:22.834+02:00  INFO 9400 --- [emt_lab_B] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-23T10:55:22.993+02:00  INFO 9400 --- [emt_lab_B] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-23T10:55:23.044+02:00  INFO 9400 --- [emt_lab_B] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-23T10:55:23.463+02:00  INFO 9400 --- [emt_lab_B] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-23T10:55:23.590+02:00  INFO 9400 --- [emt_lab_B] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3c4ad54
+2026-06-23T10:55:23.591+02:00  INFO 9400 --- [emt_lab_B] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-23T10:55:23.649+02:00  INFO 9400 --- [emt_lab_B] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/rentals]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.4
+	Default catalog/schema: rentals/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-23T10:55:24.555+02:00  INFO 9400 --- [emt_lab_B] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-23T10:55:24.885+02:00  WARN 9400 --- [emt_lab_B] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-23T10:55:25.022+02:00 DEBUG 9400 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.web.filter.JwtFilter  : Filter 'jwtFilter' configured for use
+2026-06-23T10:55:25.565+02:00  WARN 9400 --- [emt_lab_B] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: bcd92515-5b29-476c-a6c0-913a273728b3
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-23T10:55:26.094+02:00  INFO 9400 --- [emt_lab_B] [main] m.f.ukim.emt_lab_b.EmtLabBApplication    : Started EmtLabBApplication in 4.889 seconds (process running for 5.484)
+2026-06-23T10:55:32.757+02:00  INFO 9400 --- [emt_lab_B] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-23T10:55:33.657+02:00  INFO 9400 --- [emt_lab_B] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 590 ms
+2026-06-23T10:56:00.403+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:56:00.405+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:56:17.497+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-4] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:56:17.497+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:56:17.520+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-4] org.hibernate.SQL                        : select c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at from countries c1_0
+2026-06-23T10:56:22.862+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:56:22.862+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:56:22.869+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0
+2026-06-23T10:56:22.877+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at from countries c1_0 where c1_0.id=?
+2026-06-23T10:56:22.877+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:56:22.881+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at from countries c1_0 where c1_0.id=?
+2026-06-23T10:56:22.881+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [2]
+2026-06-23T10:56:22.883+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at from countries c1_0 where c1_0.id=?
+2026-06-23T10:56:22.883+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [3]
+2026-06-23T10:56:22.884+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at from countries c1_0 where c1_0.id=?
+2026-06-23T10:56:22.884+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [4]
+2026-06-23T10:56:22.886+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at from countries c1_0 where c1_0.id=?
+2026-06-23T10:56:22.886+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [5]
+2026-06-23T10:56:22.887+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at from countries c1_0 where c1_0.id=?
+2026-06-23T10:56:22.887+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2026-06-23T10:56:22.890+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at from countries c1_0 where c1_0.id=?
+2026-06-23T10:56:22.891+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2026-06-23T10:56:22.892+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at from countries c1_0 where c1_0.id=?
+2026-06-23T10:56:22.892+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2026-06-23T10:56:22.894+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at from countries c1_0 where c1_0.id=?
+2026-06-23T10:56:22.894+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [9]
+2026-06-23T10:56:22.896+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at from countries c1_0 where c1_0.id=?
+2026-06-23T10:56:22.896+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [10]
+2026-06-23T10:56:29.100+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-5] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:56:29.101+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:56:29.107+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-5] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:56:29.107+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:56:35.150+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:56:35.151+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:56:35.157+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.SQL                        : select c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at from countries c1_0 where c1_0.id=?
+2026-06-23T10:56:35.157+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:56:41.693+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:56:41.693+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:56:41.699+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select r1_0.id,r1_0.category,r1_0.created_at,r1_0.host_id,r1_0.name,r1_0.num_rooms,r1_0.updated_at from rentals r1_0
+2026-06-23T10:56:41.701+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:56:41.701+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:56:41.703+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:56:41.704+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [2]
+2026-06-23T10:56:41.705+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:56:41.705+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [3]
+2026-06-23T10:56:41.707+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:56:41.707+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [4]
+2026-06-23T10:56:41.709+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:56:41.709+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [5]
+2026-06-23T10:56:41.711+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:56:41.711+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2026-06-23T10:56:41.713+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:56:41.713+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2026-06-23T10:56:41.714+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:56:41.714+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2026-06-23T10:56:41.716+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:56:41.716+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [9]
+2026-06-23T10:56:41.718+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:56:41.718+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [10]
+2026-06-23T10:56:45.592+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:56:45.593+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:56:45.605+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : select r1_0.id,r1_0.category,r1_0.created_at,r1_0.host_id,r1_0.name,r1_0.num_rooms,r1_0.updated_at from rentals r1_0 where r1_0.id=?
+2026-06-23T10:56:45.605+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:56:45.608+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:56:45.608+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:56:51.062+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-4] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:56:51.063+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:56:51.068+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-4] org.hibernate.SQL                        : select rv1_0.id,rv1_0.category,rv1_0.country_name,rv1_0.host_name,rv1_0.name,rv1_0.num_rooms from rentals_view rv1_0
+2026-06-23T10:57:08.440+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:57:08.441+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:57:32.003+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-5] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:57:32.003+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:57:32.009+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-5] org.hibernate.SQL                        : select rmv1_0.id,rmv1_0.avg_num_rooms,rmv1_0.category,rmv1_0.num_rentals,rmv1_0.num_rooms from rentals_materialized_view rmv1_0
+2026-06-23T10:57:41.328+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-3] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:57:41.328+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:57:41.333+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-3] org.hibernate.SQL                        : select al1_0.id,al1_0.created_at,al1_0.event_type,al1_0.rental_name,al1_0.updated_at from logs al1_0
+2026-06-23T10:57:51.915+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-7] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:57:51.916+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:57:51.920+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-7] org.hibernate.SQL                        : select r1_0.id,r1_0.category,r1_0.created_at,r1_0.host_id,h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at,r1_0.name,r1_0.num_rooms,r1_0.updated_at from rentals r1_0 join hosts h1_0 on h1_0.id=r1_0.host_id join countries c1_0 on c1_0.id=h1_0.country_id where r1_0.id=?
+2026-06-23T10:57:51.921+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:57:51.969+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-7] org.hibernate.SQL                        : update rentals set category=?,host_id=?,name=?,num_rooms=?,updated_at=? where id=?
+2026-06-23T10:57:51.970+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [APARTMENT]
+2026-06-23T10:57:51.970+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-23T10:57:51.970+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [Berlin City Apartment]
+2026-06-23T10:57:51.970+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (4:INTEGER) <- [1]
+2026-06-23T10:57:51.970+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (5:TIMESTAMP) <- [2026-06-23T10:57:51.951597100]
+2026-06-23T10:57:51.971+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (6:BIGINT) <- [1]
+2026-06-23T10:58:02.762+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-6] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:58:02.762+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:58:02.769+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-6] org.hibernate.SQL                        : select r1_0.id,r1_0.category,r1_0.created_at,r1_0.host_id,h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at,r1_0.name,r1_0.num_rooms,r1_0.updated_at from rentals r1_0 join hosts h1_0 on h1_0.id=r1_0.host_id join countries c1_0 on c1_0.id=h1_0.country_id where r1_0.id=?
+2026-06-23T10:58:02.769+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:58:02.775+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-6] org.hibernate.SQL                        : update rentals set category=?,host_id=?,name=?,num_rooms=?,updated_at=? where id=?
+2026-06-23T10:58:02.775+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [APARTMENT]
+2026-06-23T10:58:02.775+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-23T10:58:02.775+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [Berlin City Apartment]
+2026-06-23T10:58:02.775+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (4:INTEGER) <- [0]
+2026-06-23T10:58:02.775+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (5:TIMESTAMP) <- [2026-06-23T10:58:02.774739700]
+2026-06-23T10:58:02.776+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (6:BIGINT) <- [1]
+2026-06-23T10:58:12.979+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:58:12.979+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:58:12.984+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-8] org.hibernate.SQL                        : select r1_0.id,r1_0.category,r1_0.created_at,r1_0.host_id,h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at,r1_0.name,r1_0.num_rooms,r1_0.updated_at from rentals r1_0 join hosts h1_0 on h1_0.id=r1_0.host_id join countries c1_0 on c1_0.id=h1_0.country_id where r1_0.id=?
+2026-06-23T10:58:12.985+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:58:12.988+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-8] org.hibernate.SQL                        : update rentals set category=?,host_id=?,name=?,num_rooms=?,updated_at=? where id=?
+2026-06-23T10:58:12.988+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [APARTMENT]
+2026-06-23T10:58:12.988+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-23T10:58:12.989+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [Berlin City Apartment]
+2026-06-23T10:58:12.989+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (4:INTEGER) <- [1]
+2026-06-23T10:58:12.989+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (5:TIMESTAMP) <- [2026-06-23T10:58:12.988433]
+2026-06-23T10:58:12.989+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (6:BIGINT) <- [1]
+2026-06-23T10:58:15.973+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:58:15.973+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:58:15.978+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.SQL                        : select r1_0.id,r1_0.category,r1_0.created_at,r1_0.host_id,h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at,r1_0.name,r1_0.num_rooms,r1_0.updated_at from rentals r1_0 join hosts h1_0 on h1_0.id=r1_0.host_id join countries c1_0 on c1_0.id=h1_0.country_id where r1_0.id=?
+2026-06-23T10:58:15.978+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:58:15.982+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.SQL                        : update rentals set category=?,host_id=?,name=?,num_rooms=?,updated_at=? where id=?
+2026-06-23T10:58:15.982+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [APARTMENT]
+2026-06-23T10:58:15.982+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-23T10:58:15.982+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [Berlin City Apartment]
+2026-06-23T10:58:15.982+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (4:INTEGER) <- [2]
+2026-06-23T10:58:15.983+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (5:TIMESTAMP) <- [2026-06-23T10:58:15.982269700]
+2026-06-23T10:58:15.983+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (6:BIGINT) <- [1]
+2026-06-23T10:58:17.835+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:58:17.835+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:58:17.842+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : select r1_0.id,r1_0.category,r1_0.created_at,r1_0.host_id,h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at,r1_0.name,r1_0.num_rooms,r1_0.updated_at from rentals r1_0 join hosts h1_0 on h1_0.id=r1_0.host_id join countries c1_0 on c1_0.id=h1_0.country_id where r1_0.id=?
+2026-06-23T10:58:17.842+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:58:17.847+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.SQL                        : update rentals set category=?,host_id=?,name=?,num_rooms=?,updated_at=? where id=?
+2026-06-23T10:58:17.848+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [APARTMENT]
+2026-06-23T10:58:17.848+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-23T10:58:17.848+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [Berlin City Apartment]
+2026-06-23T10:58:17.848+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (4:INTEGER) <- [3]
+2026-06-23T10:58:17.849+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (5:TIMESTAMP) <- [2026-06-23T10:58:17.847295600]
+2026-06-23T10:58:17.849+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (6:BIGINT) <- [1]
+2026-06-23T10:58:43.822+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:58:43.822+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:58:43.828+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : select r1_0.id,r1_0.category,r1_0.created_at,r1_0.host_id,h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at,r1_0.name,r1_0.num_rooms,r1_0.updated_at from rentals r1_0 join hosts h1_0 on h1_0.id=r1_0.host_id join countries c1_0 on c1_0.id=h1_0.country_id where r1_0.id=?
+2026-06-23T10:58:43.828+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:58:43.834+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.SQL                        : update rentals set category=?,host_id=?,name=?,num_rooms=?,updated_at=? where id=?
+2026-06-23T10:58:43.835+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [APARTMENT]
+2026-06-23T10:58:43.835+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-23T10:58:43.835+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [Berlin City Apartment]
+2026-06-23T10:58:43.835+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (4:INTEGER) <- [4]
+2026-06-23T10:58:43.835+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (5:TIMESTAMP) <- [2026-06-23T10:58:43.834717400]
+2026-06-23T10:58:43.835+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (6:BIGINT) <- [1]
+2026-06-23T10:58:51.739+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-4] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role,u1_0.surname,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-06-23T10:58:51.739+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [admin]
+2026-06-23T10:58:51.744+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-4] org.hibernate.SQL                        : select r1_0.id,r1_0.category,r1_0.created_at,r1_0.host_id,r1_0.name,r1_0.num_rooms,r1_0.updated_at from rentals r1_0 where r1_0.id=?
+2026-06-23T10:58:51.744+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:58:51.745+02:00 DEBUG 9400 --- [emt_lab_B] [http-nio-8080-exec-4] org.hibernate.SQL                        : select h1_0.id,h1_0.country_id,c1_0.id,c1_0.continent,c1_0.created_at,c1_0.name,c1_0.updated_at,h1_0.created_at,h1_0.name,h1_0.surname,h1_0.updated_at from hosts h1_0 join countries c1_0 on c1_0.id=h1_0.country_id where h1_0.id=?
+2026-06-23T10:58:51.745+02:00 TRACE 9400 --- [emt_lab_B] [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-23T10:59:08.283+02:00  INFO 9400 --- [emt_lab_B] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-23T10:59:08.285+02:00  INFO 9400 --- [emt_lab_B] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -2,7 +2,12 @@ package mk.finki.ukim.emt_lab_b.service.domain;
 
 import mk.finki.ukim.emt_lab_b.domain.enums.RentalCategory;
 import mk.finki.ukim.emt_lab_b.domain.models.Rental;
+import mk.finki.ukim.emt_lab_b.domain.projections.ShortRentalProjection;
+import mk.finki.ukim.emt_lab_b.domain.views.RentalView;
+import mk.finki.ukim.emt_lab_b.events.RentalRentedEvent;
 import mk.finki.ukim.emt_lab_b.repository.RentalRepository;
+import mk.finki.ukim.emt_lab_b.repository.RentalViewRepository;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -18,14 +23,16 @@ import static mk.finki.ukim.emt_lab_b.service.FieldFilterSpecification.*;
 @Service
 public class RentalService implements IRentalService{
     private final RentalRepository rentalRepository;
+    private final ApplicationEventPublisher applicationEventPublisher;
 
-    public RentalService(RentalRepository rentalRepository) {
+    public RentalService(RentalRepository rentalRepository, ApplicationEventPublisher applicationEventPublisher) {
         this.rentalRepository = rentalRepository;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     @Override
-    public Optional<Rental> findById(Long id) {
-        return rentalRepository.findById(id);
+    public ShortRentalProjection findById(Long id) {
+        return rentalRepository.findByIdProjection(id);
     }
 
     @Override
@@ -51,7 +58,7 @@ public class RentalService implements IRentalService{
 
     @Override
     public Optional<Rental> deleteById(Long id) {
-        Optional<Rental> rental = findById(id);
+        Optional<Rental> rental = rentalRepository.findById(id);
         rental.ifPresent(rentalRepository::delete);
         return rental;
     }
@@ -63,6 +70,7 @@ public class RentalService implements IRentalService{
             if (r.getNumRooms() > 0) {
                 r.setNumRooms(r.getNumRooms() - 1);
                 rentalRepository.save(r);
+                applicationEventPublisher.publishEvent(new RentalRentedEvent(r));
             }
         });
 

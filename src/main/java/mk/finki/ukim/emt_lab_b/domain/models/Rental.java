@@ -11,10 +11,25 @@ import mk.finki.ukim.emt_lab_b.domain.enums.RentalCategory;
 @Setter
 @NoArgsConstructor
 @Table(name = "rentals")
+@NamedEntityGraph(
+        name = "rental-entity-graph",
+        attributeNodes = {
+                @NamedAttributeNode(value = "host", subgraph = "host-subgraph"),
+        },
+        subgraphs = {
+                @NamedSubgraph(
+                        name = "host-subgraph",
+                        attributeNodes = {
+                                @NamedAttributeNode("country")
+                        }
+                )
+        }
+)
 public class Rental extends BaseAuditableEntity {
     @Column(nullable = false)
     String name;
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     RentalCategory category;
     @ManyToOne
     @JoinColumn(name = "host_id", nullable = false)

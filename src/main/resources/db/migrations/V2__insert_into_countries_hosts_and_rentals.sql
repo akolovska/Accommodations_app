@@ -25,15 +25,15 @@ VALUES
     (NOW(), NOW(), 'Thabo', 'Nkosi', 10);
 
 INSERT INTO rentals
-(created_at, updated_at, name, category, host_id, numRooms)
+(created_at, updated_at, name, category, host_id, num_rooms)
 VALUES
     (NOW(), NOW(), 'Berlin City Apartment', 'APARTMENT', 1, 2),
-    (NOW(), NOW(), 'Paris Luxury Flat', 'APARTMENT', 2, 3),
+    (NOW(), NOW(), 'Paris Luxury Flat', 'FLAT', 2, 3),
     (NOW(), NOW(), 'Rome Historic House', 'HOUSE', 3, 4),
-    (NOW(), NOW(), 'Barcelona Beach Villa', 'VILLA', 4, 5),
+    (NOW(), NOW(), 'Barcelona Beach Villa', 'MOTEL', 4, 5),
     (NOW(), NOW(), 'New York Loft', 'APARTMENT', 5, 2),
-    (NOW(), NOW(), 'Toronto Downtown Condo', 'CONDO', 6, 3),
+    (NOW(), NOW(), 'Toronto Downtown Condo', 'ROOM', 6, 3),
     (NOW(), NOW(), 'Rio Ocean View', 'APARTMENT', 7, 2),
-    (NOW(), NOW(), 'Tokyo Business Suite', 'APARTMENT', 8, 1),
+    (NOW(), NOW(), 'Tokyo Business Suite', 'FLAT', 8, 1),
     (NOW(), NOW(), 'Sydney Harbour House', 'HOUSE', 9, 4),
-    (NOW(), NOW(), 'Cape Town Retreat', 'VILLA', 10, 6);
+    (NOW(), NOW(), 'Cape Town Retreat', 'MOTEL', 10, 6);

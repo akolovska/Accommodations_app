@@ -5,7 +5,7 @@ services:
     environment:
       POSTGRES_USER: emc
       POSTGRES_PASSWORD: emc
-      POSTGRES_DB: rental
+      POSTGRES_DB: rentals
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:

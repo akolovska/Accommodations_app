@@ -4,7 +4,12 @@ import jakarta.validation.Valid;
 import mk.finki.ukim.emt_lab_b.domain.dtos.CreateRentalDto;
 import mk.finki.ukim.emt_lab_b.domain.dtos.DisplayRentalDto;
 import mk.finki.ukim.emt_lab_b.domain.enums.RentalCategory;
+import mk.finki.ukim.emt_lab_b.domain.models.ActivityLog;
+import mk.finki.ukim.emt_lab_b.domain.projections.ShortRentalProjection;
+import mk.finki.ukim.emt_lab_b.domain.views.RentalMaterializedView;
+import mk.finki.ukim.emt_lab_b.domain.views.RentalView;
 import mk.finki.ukim.emt_lab_b.service.application.IRentalApplicationService;
+import mk.finki.ukim.emt_lab_b.service.domain.IActivityLogService;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,16 +20,15 @@ import java.util.List;
 @RequestMapping("/api/rentals")
 public class RentalController {
     private final IRentalApplicationService rentalService;
+    private final IActivityLogService activityLogService;
 
-    public RentalController(IRentalApplicationService rentalService) {
+    public RentalController(IRentalApplicationService rentalService, IActivityLogService activityLogService) {
         this.rentalService = rentalService;
+        this.activityLogService = activityLogService;
     }
     @GetMapping("/{id}")
-    public ResponseEntity<DisplayRentalDto> findById(@PathVariable Long id) {
-        return rentalService
-                .findById(id)
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<ShortRentalProjection> findById(@PathVariable Long id) {
+        return ResponseEntity.ok(rentalService.findById(id));
     }
 
     @GetMapping
@@ -62,14 +66,14 @@ public class RentalController {
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
-    @PostMapping("/{id}/rent")
+    @DeleteMapping("/{id}/unrent")
     public ResponseEntity<DisplayRentalDto> deleteRent(@PathVariable Long id) {
         return rentalService
                 .deleteRental(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
-    @PostMapping("/{id}/rent")
+    @PostMapping("/{id}/isFull")
     public ResponseEntity<Boolean> isRented(@PathVariable Long id) {
         return ResponseEntity.ok(rentalService.isRented(id));
     }
@@ -86,5 +90,19 @@ public class RentalController {
         return ResponseEntity.ok(rentalService.find(name, category, hostId, numRooms, page, size, sortBy));
     }
 
+    @GetMapping("/views")
+    public ResponseEntity<List<RentalView>> getViews() {
+        return ResponseEntity.ok(rentalService.findAllViews());
+    }
+
+    @GetMapping("/materializedViews")
+    public ResponseEntity<List<RentalMaterializedView>> getMaterializedViews() {
+        return ResponseEntity.ok(rentalService.findAllMaterializedViews());
+    }
+
+    @GetMapping("/logs")
+    public ResponseEntity<List<ActivityLog>> getLogs() {
+        return ResponseEntity.ok(activityLogService.findAll());
+    }
 
 }

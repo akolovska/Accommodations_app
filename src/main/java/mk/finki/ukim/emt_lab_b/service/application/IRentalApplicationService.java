@@ -5,13 +5,16 @@ import mk.finki.ukim.emt_lab_b.domain.dtos.DisplayHostDto;
 import mk.finki.ukim.emt_lab_b.domain.dtos.DisplayRentalDto;
 import mk.finki.ukim.emt_lab_b.domain.enums.RentalCategory;
 import mk.finki.ukim.emt_lab_b.domain.models.Rental;
+import mk.finki.ukim.emt_lab_b.domain.projections.ShortRentalProjection;
+import mk.finki.ukim.emt_lab_b.domain.views.RentalMaterializedView;
+import mk.finki.ukim.emt_lab_b.domain.views.RentalView;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface IRentalApplicationService {
-    Optional<DisplayRentalDto> findById(Long id);
+    ShortRentalProjection findById(Long id);
 
     List<DisplayRentalDto> findAll();
 
@@ -24,4 +27,6 @@ public interface IRentalApplicationService {
     Optional<DisplayRentalDto> deleteRental(Long id);
     Boolean isRented(Long id);
     Page<DisplayRentalDto> find(String name, RentalCategory category, Long hostId, Integer numRooms, int page, int size, String sortBy);
+    List<RentalView> findAllViews();
+    List<RentalMaterializedView> findAllMaterializedViews();
 }
