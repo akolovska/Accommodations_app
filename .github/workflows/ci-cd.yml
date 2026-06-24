@@ -40,10 +40,13 @@ jobs:
 
       - name: Build backend
         run: mvn -B clean verify
+        working-directory: backend
         env:
           SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/rentals
           SPRING_DATASOURCE_USERNAME: emc
           SPRING_DATASOURCE_PASSWORD: emc
+          SPRING_JPA_HIBERNATE_DDL_AUTO: update
+          SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
 
   frontend:
     runs-on: ubuntu-latest
