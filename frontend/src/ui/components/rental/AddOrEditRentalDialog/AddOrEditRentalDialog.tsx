@@ -61,12 +61,14 @@ const AddOrEditRentalDialog = ({
     );
 
     useEffect(() => {
-        setFormData(
-            rental
-                ? rentalToFormData(rental)
-                : emptyFormData
-        );
-    }, [rental]);
+        if (!open) return;
+
+        if (rental) {
+            setFormData(rentalToFormData(rental));
+        } else {
+            setFormData(emptyFormData);
+        }
+    }, [rental, open]);
 
     const handleChange = (
         event:

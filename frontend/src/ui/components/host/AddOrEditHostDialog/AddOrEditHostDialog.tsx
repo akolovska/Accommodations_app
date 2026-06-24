@@ -3,7 +3,7 @@ import {
     Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, MenuItem, Select, type SelectChangeEvent,
     TextField
 } from '@mui/material';
-import {useEffect, useState} from 'react';
+import { useState} from 'react';
 import * as React from 'react';
 import useHosts from '../../../../hooks/useHosts.ts';
 import useCountries from "../../../../hooks/useCountries.ts";
@@ -49,12 +49,6 @@ const AddOrEditHostDialog = ({ open, onClose, host }: HostFormDialogProps) => {
         const { name, value } = event.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
-
-    useEffect(() => {
-        setFormData(
-            host ? HostToFormData(host) : emptyFormData
-        );
-    }, [host]);
 
     const handleSubmit = async () => {
         const selectedCountry = countries.find(

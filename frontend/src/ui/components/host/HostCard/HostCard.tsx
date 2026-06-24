@@ -60,6 +60,7 @@ const HostCard = ({ host }: HostCardProps) => {
                 </CardActions>
             </Card>
             <AddOrEditHostDialog
+                key={host?.id ?? 'new'}
                 host={host}
                 open={editHostDialogOpen}
                 onClose={() => setEditHostDialogOpen(false)}
