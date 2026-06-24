@@ -66,6 +66,7 @@ const HostCard = ({ host }: HostCardProps) => {
                 onClose={() => setEditHostDialogOpen(false)}
             />
             <DeleteHostDialog
+                key={host?.id ?? 'new'}
                 host={host}
                 open={deleteHostDialogOpen}
                 onClose={() => setDeleteHostDialogOpen(false)}

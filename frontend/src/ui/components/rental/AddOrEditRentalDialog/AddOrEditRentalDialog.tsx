@@ -11,7 +11,7 @@ import {
     type SelectChangeEvent,
     TextField
 } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import * as React from 'react';
 
 import { RentalCategory } from '../../../../api/types/rentalCategory.ts';
@@ -59,16 +59,6 @@ const AddOrEditRentalDialog = ({
     const [formData, setFormData] = useState<FormData>(
         rental ? rentalToFormData(rental) : emptyFormData
     );
-
-    useEffect(() => {
-        if (!open) return;
-
-        if (rental) {
-            setFormData(rentalToFormData(rental));
-        } else {
-            setFormData(emptyFormData);
-        }
-    }, [rental, open]);
 
     const handleChange = (
         event:

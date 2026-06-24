@@ -60,11 +60,13 @@ const RentalCard = ({ rental }: RentalCardProps) => {
                 </CardActions>
             </Card>
             <AddOrEditRentalDialog
+                key={rental?.id ?? 'new'}
                 rental={rental}
                 open={editRentalDialogOpen}
                 onClose={() => setEditRentalDialogOpen(false)}
             />
             <DeleteRentalDialog
+                key={rental?.id ?? 'new'}
                 rental={rental}
                 open={deleteRentalDialogOpen}
                 onClose={() => setDeleteRentalDialogOpen(false)}
