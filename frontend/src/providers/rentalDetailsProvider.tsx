@@ -59,7 +59,11 @@ const RentalDetailsProvider = ({ children }: { children: React.ReactNode }) => {
     }, [showSnackbar]);
 
     useEffect(() => {
-        void fetchRental();
+        const load = async () => {
+            await fetchRental();
+        };
+
+        void load();
     }, [fetchRental]);
 
     const value = useMemo(

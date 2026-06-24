@@ -58,7 +58,11 @@ const CountryDetailsProvider = ({ children }: { children: React.ReactNode }) => 
     }, [showSnackbar]);
 
     useEffect(() => {
-        void fetchCountry();
+        const load = async () => {
+            await fetchCountry();
+        };
+
+        void load();
     }, [fetchCountry]);
 
     const value = useMemo(

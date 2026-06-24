@@ -59,7 +59,11 @@ const HostDetailsProvider = ({ children }: { children: React.ReactNode }) => {
     }, [showSnackbar]);
 
     useEffect(() => {
-        void fetchHost();
+        const load = async () => {
+            await fetchHost();
+        };
+
+        void load();
     }, [fetchHost]);
 
     const value = useMemo(

@@ -52,7 +52,11 @@ const RentalsProvider = ({ children }: { children: React.ReactNode }) => {
     }, [fetch, showSnackbar]);
 
     useEffect(() => {
-        void fetch();
+        const load = async () => {
+            await fetch();
+        };
+
+        void load();
     }, [fetch]);
 
     const value = useMemo(
