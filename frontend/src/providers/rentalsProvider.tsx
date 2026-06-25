@@ -64,7 +64,7 @@ const RentalsProvider = ({ children }: { children: React.ReactNode }) => {
         [rentals, loading, onAdd, onEdit, onDelete]
     );
 
-    return <RentalsContext value={value}>{children}</RentalsContext>;
+    return <RentalsContext.Provider value={value}>{children}</RentalsContext.Provider>;
 };
 
 export default RentalsProvider;

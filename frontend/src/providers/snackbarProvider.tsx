@@ -27,7 +27,7 @@ const SnackbarProvider = ({children}: { children: React.ReactNode }) => {
     const value = useMemo(() => ({showSnackbar}), [showSnackbar]);
 
     return (
-        <SnackbarContext value={value}>
+        <SnackbarContext.Provider value={value}>
             {children}
             <Snackbar
                 open={state.open}
@@ -39,7 +39,7 @@ const SnackbarProvider = ({children}: { children: React.ReactNode }) => {
                     {state.message}
                 </Alert>
             </Snackbar>
-        </SnackbarContext>
+        </SnackbarContext.Provider>
     );
 };
 

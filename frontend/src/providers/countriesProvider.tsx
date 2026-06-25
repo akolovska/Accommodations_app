@@ -64,7 +64,7 @@ const CountriesProvider = ({ children }: { children: React.ReactNode }) => {
         [countries, loading, onAdd, onEdit, onDelete]
     );
 
-    return <CountriesContext value={value}>{children}</CountriesContext>;
+    return <CountriesContext.Provider value={value}>{children}</CountriesContext.Provider>;
 };
 
 export default CountriesProvider;

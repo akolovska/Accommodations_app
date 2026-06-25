@@ -42,9 +42,9 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }), [user, login, logout]);
 
     return (
-        <AuthContext value={value}>
+        <AuthContext.Provider value={value}>
             {children}
-        </AuthContext>
+        </AuthContext.Provider>
     );
 };
 

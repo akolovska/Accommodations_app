@@ -77,9 +77,9 @@ const HostDetailsProvider = ({ children }: { children: React.ReactNode }) => {
     );
 
     return (
-        <HostDetailsContext value={value}>
+        <HostDetailsContext.Provider value={value}>
             {children}
-        </HostDetailsContext>
+        </HostDetailsContext.Provider>
     );
 };
 

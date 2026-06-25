@@ -76,9 +76,9 @@ const CountryDetailsProvider = ({ children }: { children: React.ReactNode }) => 
     );
 
     return (
-        <CountryDetailsContext value={value}>
+        <CountryDetailsContext.Provider value={value}>
             {children}
-        </CountryDetailsContext>
+        </CountryDetailsContext.Provider>
     );
 };
 

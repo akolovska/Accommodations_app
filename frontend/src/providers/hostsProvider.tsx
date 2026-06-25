@@ -64,7 +64,7 @@ const HostsProvider = ({ children }: { children: React.ReactNode }) => {
         [hosts, loading, onAdd, onEdit, onDelete]
     );
 
-    return <HostsContext value={value}>{children}</HostsContext>;
+    return <HostsContext.Provider value={value}>{children}</HostsContext.Provider>;
 };
 
 export default HostsProvider;
