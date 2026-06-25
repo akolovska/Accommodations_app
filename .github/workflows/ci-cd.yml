@@ -105,6 +105,8 @@ jobs:
         with:
           context: ./frontend
           push: true
+          build-args: |
+            VITE_API_URL=http://accommodations.local/api
           tags: |
             happykhat/rentals-frontend:latest
             happykhat/rentals-frontend:${{ github.sha }}

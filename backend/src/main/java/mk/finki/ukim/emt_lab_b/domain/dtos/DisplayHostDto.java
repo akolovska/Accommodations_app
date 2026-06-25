@@ -5,12 +5,14 @@ import mk.finki.ukim.emt_lab_b.domain.models.Host;
 
 import java.util.List;
 
-public record DisplayHostDto(String name,
+public record DisplayHostDto(Long id,
+                             String name,
                              String surname,
                              Country country) {
     public static DisplayHostDto from(Host host) {
-        return new DisplayHostDto(host.getName(), host.getSurname(), host.getCountry());
+        return new DisplayHostDto(host.getId(), host.getName(), host.getSurname(), host.getCountry());
     }
+
     public static List<DisplayHostDto> from(List<Host> hosts) {
         return hosts
                 .stream()

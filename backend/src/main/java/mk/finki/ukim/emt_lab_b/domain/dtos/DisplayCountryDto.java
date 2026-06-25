@@ -4,11 +4,13 @@ import mk.finki.ukim.emt_lab_b.domain.models.Country;
 
 import java.util.List;
 
-public record DisplayCountryDto(String name,
+public record DisplayCountryDto(Long id,
+                                String name,
                                 String continent) {
     public static DisplayCountryDto from(Country country) {
-        return new DisplayCountryDto(country.getName(), country.getContinent());
+        return new DisplayCountryDto(country.getId(), country.getName(), country.getContinent());
     }
+
     public static List<DisplayCountryDto> from(List<Country> countries) {
         return countries.stream().map(DisplayCountryDto::from).toList();
     }

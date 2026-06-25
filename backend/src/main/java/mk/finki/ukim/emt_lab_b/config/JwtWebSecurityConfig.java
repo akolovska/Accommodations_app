@@ -47,7 +47,7 @@ public class JwtWebSecurityConfig {
     @Bean
     public RoleHierarchy roleHierarchy() {
         return RoleHierarchyImpl.withDefaultRolePrefix()
-                .role("ADMINISTRATOR").implies("USER")
+                .role("ADMIN").implies("USER")
                 .build();
     }
 
@@ -107,23 +107,23 @@ public class JwtWebSecurityConfig {
                                         "/api/hosts/add",
                                         "/api/countries/add"
                                 )
-                                .hasRole("ADMINISTRATOR")
+                                .hasRole("ADMIN")
                                 .requestMatchers(
                                         HttpMethod.PUT,
                                         "/api/rentals/{id}/edit",
                                         "/api/hosts/{id}/edit",
                                         "/api/countries/{id}/edit"
                                 )
-                                .hasRole("ADMINISTRATOR")
+                                .hasRole("ADMIN")
                                 .requestMatchers(
                                         HttpMethod.DELETE,
                                         "/api/rentals/{id}/delete",
                                         "/api/countries/{id}/delete",
                                         "/api/hosts/{id}/delete"
                                 )
-                                .hasRole("ADMINISTRATOR")
+                                .hasRole("ADMIN")
                                 .anyRequest()
-                                .hasRole("ADMINISTRATOR")
+                                .hasRole("ADMIN")
                 )
                 .sessionManagement(sessionManagementConfigurer ->
                         sessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
