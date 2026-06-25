@@ -58,77 +58,88 @@ public class JwtWebSecurityConfig {
         return expressionHandler;
     }
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(AbstractHttpConfigurer::disable)
-                .cors(corsCustomizer ->
-                        corsCustomizer.configurationSource(corsConfigurationSource())
-                )
-                .headers(headers -> headers
-                        .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin)
-                )
-                .authorizeHttpRequests(authorizeHttpRequestsCustomizer ->
-                        authorizeHttpRequestsCustomizer
-                                .requestMatchers(
-                                        "/swagger-ui/**",
-                                        "/v3/api-docs/**",
-                                        "/api/user/register",
-                                        "/api/user/login"
-                                )
-                                .permitAll()
-                                .requestMatchers(
-                                        "/api/user/me"
-                                )
-                                .authenticated()
-                                .requestMatchers(
-                                        HttpMethod.GET,
-                                        "/api/rentals",
-                                        "/api/rentals/{id}",
-                                        "/api/hosts",
-                                        "/api/hosts/{id}",
-                                        "/api/countries",
-                                        "/api/countries/{id}"
-                                )
-                                .hasRole("USER")
-                                .requestMatchers(
-                                        HttpMethod.POST,
-                                        "/api/rentals/{id}/rent"
-                                )
-                                .hasRole("USER")
-                                .requestMatchers(
-                                        HttpMethod.DELETE,
-                                        "/api/rentals/{id}/unrent"
-                                )
-                                .hasRole("USER")
-                                .requestMatchers(
-                                        HttpMethod.POST,
-                                        "/api/rentals/add",
-                                        "/api/hosts/add",
-                                        "/api/countries/add"
-                                )
-                                .hasRole("ADMIN")
-                                .requestMatchers(
-                                        HttpMethod.PUT,
-                                        "/api/rentals/{id}/edit",
-                                        "/api/hosts/{id}/edit",
-                                        "/api/countries/{id}/edit"
-                                )
-                                .hasRole("ADMIN")
-                                .requestMatchers(
-                                        HttpMethod.DELETE,
-                                        "/api/rentals/{id}/delete",
-                                        "/api/countries/{id}/delete",
-                                        "/api/hosts/{id}/delete"
-                                )
-                                .hasRole("ADMIN")
-                                .anyRequest()
-                                .hasRole("ADMIN")
-                )
-                .sessionManagement(sessionManagementConfigurer ->
-                        sessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                )
-                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-        return http.build();
-    }
+//    @Bean
+//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//        http
+//                .csrf(AbstractHttpConfigurer::disable)
+//                .cors(corsCustomizer ->
+//                        corsCustomizer.configurationSource(corsConfigurationSource())
+//                )
+//                .headers(headers -> headers
+//                        .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin)
+//                )
+//                .authorizeHttpRequests(authorizeHttpRequestsCustomizer ->
+//                        authorizeHttpRequestsCustomizer
+//                                .requestMatchers(
+//                                        "/swagger-ui/**",
+//                                        "/v3/api-docs/**",
+//                                        "/api/user/register",
+//                                        "/api/user/login"
+//                                )
+//                                .permitAll()
+//                                .requestMatchers(
+//                                        "/api/user/me"
+//                                )
+//                                .authenticated()
+//                                .requestMatchers(
+//                                        HttpMethod.GET,
+//                                        "/api/rentals",
+//                                        "/api/rentals/{id}",
+//                                        "/api/hosts",
+//                                        "/api/hosts/{id}",
+//                                        "/api/countries",
+//                                        "/api/countries/{id}"
+//                                )
+//                                .hasRole("USER")
+//                                .requestMatchers(
+//                                        HttpMethod.POST,
+//                                        "/api/rentals/{id}/rent"
+//                                )
+//                                .hasRole("USER")
+//                                .requestMatchers(
+//                                        HttpMethod.DELETE,
+//                                        "/api/rentals/{id}/unrent"
+//                                )
+//                                .hasRole("USER")
+//                                .requestMatchers(
+//                                        HttpMethod.POST,
+//                                        "/api/rentals/add",
+//                                        "/api/hosts/add",
+//                                        "/api/countries/add"
+//                                )
+//                                .hasRole("ADMIN")
+//                                .requestMatchers(
+//                                        HttpMethod.PUT,
+//                                        "/api/rentals/{id}/edit",
+//                                        "/api/hosts/{id}/edit",
+//                                        "/api/countries/{id}/edit"
+//                                )
+//                                .hasRole("ADMIN")
+//                                .requestMatchers(
+//                                        HttpMethod.DELETE,
+//                                        "/api/rentals/{id}/delete",
+//                                        "/api/countries/{id}/delete",
+//                                        "/api/hosts/{id}/delete"
+//                                )
+//                                .hasRole("ADMIN")
+//                                .anyRequest()
+//                                .hasRole("ADMIN")
+//                )
+//                .sessionManagement(sessionManagementConfigurer ->
+//                        sessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                )
+//                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+//        return http.build();
+//    }
+        @Bean
+        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+            http
+                    .csrf(csrf -> csrf.disable())
+                    .authorizeHttpRequests(auth -> auth
+                            .requestMatchers("/api/**").permitAll()
+                            .anyRequest().authenticated()
+                    );
+
+            return http.build();
+        }
 }
